@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Atención al Cliente - El Corte Inglés</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f5f4;
+      color: #2f2f2f;
+    }
+
+    .page-wrapper {
+      min-height: 100vh;
+      padding: 45px 20px;
+    }
+
+    .form-container {
+      max-width: 760px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+      overflow: hidden;
+    }
+
+    .form-header {
+      background: #007a33;
+      color: white;
+      padding: 32px 38px;
+    }
+
+    .form-header h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    .form-header p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .form-content {
+      padding: 35px 38px 40px;
+    }
+
+    .section-title {
+      margin-top: 30px;
+      margin-bottom: 18px;
+      padding-bottom: 9px;
+      border-bottom: 2px solid #e1e7e3;
+      color: #007a33;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .section-title:first-child {
+      margin-top: 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 18px;
+    }
+
+    .form-row .form-group {
+      flex: 1;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .required {
+      color: #b42318;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 13px;
+      font-family: inherit;
+      font-size: 15px;
+      color: #2f2f2f;
+      background: white;
+      border: 1px solid #cfd6d2;
+      border-radius: 7px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #007a33;
+      box-shadow: 0 0 0 3px rgba(0, 122, 51, 0.12);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .helper-text {
+      margin-top: 6px;
+      color: #6d726f;
+      font-size: 12px;
+    }
+
+    .other-reason-box {
+      display: none;
+      margin-top: 14px;
+      padding: 16px;
+      border: 1px solid #d7e5dc;
+      border-radius: 8px;
+      background: #f6faf7;
+    }
+
+    .submit-area {
+      margin-top: 32px;
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 14px 18px;
+      border: none;
+      border-radius: 8px;
+      background: #007a33;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background: #00672b;
+    }
+
+    .privacy-text {
+      margin-top: 15px;
+      text-align: center;
+      color: #777;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 650px) {
+      .page-wrapper {
+        padding: 20px 12px;
+      }
+
+      .form-header {
+        padding: 26px 22px;
+      }
+
+      .form-content {
+        padding: 26px 22px 30px;
+      }
+
+      .form-row {
+        display: block;
+      }
+
+      .form-header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+  <div class="form-container">
+
+    <div class="form-header">
+      <h1>Atención al cliente</h1>
+
+      <p>
+        Complete el siguiente formulario para registrar su incidencia.
+        Nuestro equipo de Atención al Cliente revisará su solicitud
+        y le dará respuesta lo antes posible.
+      </p>
+    </div>
+
+    <div class="form-content">
+
+      <form
+        action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DWV00000PanuD"
+        method="POST"
+      >
+
+        <input
+          type="hidden"
+          name="orgid"
+          value="00DWV00000PanuD"
+        >
+
+        <input
+          type="hidden"
+          name="retURL"
+          value="https://paulacampos1.github.io/eci-atencion-cliente/gracias.html"
+        >
+
+        <!--
+        DEPURACIÓN OPCIONAL
+
+        <input type="hidden" name="debug" value="1">
+
+        <input
+          type="hidden"
+          name="debugEmail"
+          value="camposmorachopaula@gmail.com"
+        >
+        -->
+
+
+        <div class="section-title">
+          Datos de contacto
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="name">
+              Nombre del contacto
+              <span class="required">*</span>
+            </label>
+
+            <input
+              id="name"
+              maxlength="80"
+              name="name"
+              type="text"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">
+              Correo electrónico
+              <span class="required">*</span>
+            </label>
+
+            <input
+              id="email"
+              maxlength="80"
+              name="email"
+              type="email"
+              required
+            >
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="phone">
+            Teléfono
+          </label>
+
+          <input
+            id="phone"
+            maxlength="40"
+            name="phone"
+            type="tel"
+          >
+        </div>
+
+
+        <div class="section-title">
+          Información de la incidencia
+        </div>
+
+        <div class="form-group">
+          <label for="subject">
+            Asunto
+            <span class="required">*</span>
+          </label>
+
+          <input
+            id="subject"
+            maxlength="80"
+            name="subject"
+            type="text"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="description">
+            Descripción
+            <span class="required">*</span>
+          </label>
+
+          <textarea
+            id="description"
+            name="description"
+            required
+          ></textarea>
+
+          <div class="helper-text">
+            Describa brevemente qué ha ocurrido.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reason">
+            Motivo del caso
+            <span class="required">*</span>
+          </label>
+
+          <select
+            id="reason"
+            name="reason"
+            required
+          >
+            <option value="">
+              -- Seleccione un motivo --
+            </option>
+
+            <option value="Producto defectuoso">
+              Producto defectuoso
+            </option>
+
+            <option value="Problema con pedido o entrega">
+              Problema con pedido o entrega
+            </option>
+
+            <option value="Devolución o cambio">
+              Devolución o cambio
+            </option>
+
+            <option value="Cobro, factura o pago">
+              Cobro, factura o pago
+            </option>
+
+            <option value="Garantía o reparación">
+              Garantía o reparación
+            </option>
+
+            <option value="Incidencia con atención o servicio recibido">
+              Incidencia con atención o servicio recibido
+            </option>
+
+            <option value="Problema con compra online o tienda">
+              Problema con compra online o tienda
+            </option>
+
+            <option value="Otro">
+              Otro
+            </option>
+          </select>
+
+          <div
+            id="otroMotivoContainer"
+            class="other-reason-box"
+          >
+
+            <label for="00NWV00000G75JV">
+              Especifique el motivo
+              <span class="required">*</span>
+            </label>
+
+            <input
+              id="00NWV00000G75JV"
+              name="00NWV00000G75JV"
+              type="text"
+              maxlength="255"
+              placeholder="Describa brevemente el motivo"
+            >
+          </div>
+        </div>
+
+
+        <div class="section-title">
+          Clasificación de la incidencia
+        </div>
+
+        <div class="form-group">
+          <label for="00NWV00000EvDdB">
+            Comunidad Autónoma
+            <span class="required">*</span>
+          </label>
+
+          <select
+            id="00NWV00000EvDdB"
+            name="00NWV00000EvDdB"
+            title="Comunidad Autónoma"
+            required
+          >
+            <option value="">
+              -- Seleccione una comunidad --
+            </option>
+
+            <option value="Galicia">Galicia</option>
+            <option value="Principado de Asturias">Principado de Asturias</option>
+            <option value="Cantabria">Cantabria</option>
+            <option value="País Vasco">País Vasco</option>
+            <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
+            <option value="La Rioja">La Rioja</option>
+            <option value="Comunidad de Madrid">Comunidad de Madrid</option>
+            <option value="Castilla y León">Castilla y León</option>
+            <option value="Castilla-La Mancha">Castilla-La Mancha</option>
+            <option value="Extremadura">Extremadura</option>
+            <option value="Cataluña">Cataluña</option>
+            <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+            <option value="Aragón">Aragón</option>
+            <option value="Región de Murcia">Región de Murcia</option>
+            <option value="Andalucía">Andalucía</option>
+            <option value="Ceuta">Ceuta</option>
+            <option value="Melilla">Melilla</option>
+            <option value="Islas Baleares">Islas Baleares</option>
+            <option value="Canarias">Canarias</option>
+          </select>
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="00NWV00000EvEFt">
+              División
+              <span class="required">*</span>
+            </label>
+
+            <select
+              id="00NWV00000EvEFt"
+              name="00NWV00000EvEFt"
+              title="División"
+              required
+            >
+              <option value="">
+                -- Seleccione una división --
+              </option>
+
+              <option value="Electrónica">Electrónica</option>
+              <option value="Hogar">Hogar</option>
+              <option value="Moda">Moda</option>
+              <option value="Complementos">Complementos</option>
+              <option value="Alimentación">Alimentación</option>
+              <option value="Otros servicios">Otros servicios</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="00NWV00000EvKZp">
+              Categoría
+              <span class="required">*</span>
+            </label>
+
+            <select
+              id="00NWV00000EvKZp"
+              name="00NWV00000EvKZp"
+              title="Categoria"
+              required
+            >
+              <option value="">
+                -- Seleccione primero una división --
+              </option>
+            </select>
+          </div>
+
+        </div>
+
+
+        <div class="submit-area">
+
+          <input
+            type="submit"
+            name="submit"
+            value="Enviar reclamación"
+            class="submit-button"
+          >
+
+          <div class="privacy-text">
+            Los datos introducidos se utilizarán para gestionar
+            su solicitud de Atención al Cliente.
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  const categoriasPorDivision = {
+
+    "Electrónica": [
+      "Telefonía",
+      "Informática",
+      "Televisión y audio",
+      "Fotografía",
+      "Videojuegos",
+      "Electrodomésticos"
+    ],
+
+    "Hogar": [
+      "Muebles",
+      "Decoración",
+      "Menaje",
+      "Textil hogar",
+      "Colchones y descanso",
+      "Bricolaje"
+    ],
+
+    "Moda": [
+      "Moda mujer",
+      "Moda hombre",
+      "Moda infantil",
+      "Calzado",
+      "Lencería",
+      "Moda deportiva"
+    ],
+
+    "Complementos": [
+      "Bolsos",
+      "Joyería",
+      "Relojería",
+      "Bisutería",
+      "Gafas",
+      "Accesorios"
+    ],
+
+    "Alimentación": [
+      "Supermercado",
+      "Gourmet",
+      "Bebidas",
+      "Frescos",
+      "Platos preparados"
+    ],
+
+    "Otros servicios": [
+      "Viajes",
+      "Seguros",
+      "Tarjeta y financiación",
+      "Entregas",
+      "Devoluciones",
+      "Atención general"
+    ]
+  };
+
+
+  const division =
+    document.getElementById("00NWV00000EvEFt");
+
+  const categoria =
+    document.getElementById("00NWV00000EvKZp");
+
+
+  division.addEventListener("change", function () {
+
+    categoria.innerHTML =
+      '<option value="">-- Seleccione una categoría --</option>';
+
+    const opciones =
+      categoriasPorDivision[this.value] || [];
+
+    opciones.forEach(function (nombre) {
+
+      const option =
+        document.createElement("option");
+
+      option.value = nombre;
+      option.textContent = nombre;
+
+      categoria.appendChild(option);
+    });
+
+  });
+
+
+  const motivo =
+    document.getElementById("reason");
+
+  const otroMotivoContainer =
+    document.getElementById("otroMotivoContainer");
+
+  const otroMotivo =
+    document.getElementById("00NWV00000G75JV");
+
+
+  motivo.addEventListener("change", function () {
+
+    if (this.value === "Otro") {
+
+      otroMotivoContainer.style.display = "block";
+      otroMotivo.required = true;
+
+    } else {
+
+      otroMotivoContainer.style.display = "none";
+      otroMotivo.required = false;
+      otroMotivo.value = "";
+
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
